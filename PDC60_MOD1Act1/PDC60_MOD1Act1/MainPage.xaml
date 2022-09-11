@@ -25,7 +25,8 @@
                 BindingContext="{x:Reference slider}"      
                 Rotation="{Binding Value}"
                 CornerRadius="50"
-                Margin="10"/>
+                Margin="10"
+                TextColor="White"/>
         
         <ListView Margin="10">
             <ListView.ItemsSource>

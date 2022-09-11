@@ -10,10 +10,6 @@ namespace PDC60_MOD1Act1
 
         public static double NormalFontSize = 25;
 
-        public static readonly Color ButtonColor = Color.BurlyWood;
-        public static readonly Color TextColor = Color.White;
-        public static readonly Color CenterColor = Color.White;            
-        public static readonly Color ButtonTextColor = Color.White;
-
+        public static readonly Color ButtonColor = Color.DarkBlue;
     }
 }
