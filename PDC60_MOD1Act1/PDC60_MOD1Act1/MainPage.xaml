@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sys="clr-namespace:System;assembly=netstandard"
+             xmlns:local="clr-namespace:PDC60_MOD1Act1"
+             x:Class="PDC60_MOD1Act1.MainPage" Title="Main Page">
+
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="10" CornerRadius="0">
+            <Label Text="PDC60 Module 1 Activity 1" HorizontalTextAlignment="Center" TextColor="White" FontSize="25"/>
+        </Frame>
+
+        <Label Text="{Binding Value, StringFormat='{0:F0}&#x00B0; rotation'}"
+               FontSize="{x:StaticExtension Member=local:Classs.NormalFontSize}" 
+               BindingContext="{x:Reference slider}" 
+               HorizontalOptions="CenterAndExpand"/>
+        
+        <Frame BackgroundColor="LightBlue" CornerRadius="50" Margin="10">
+        <Slider x:Name="slider"
+            Maximum="360"
+            VerticalOptions="Center" />        </Frame>
+        
+        <Button Text="Rotating Button"
+                BackgroundColor ="{x:Static local:Classs.ButtonColor}" 
+                BindingContext="{x:Reference slider}"      
+                Rotation="{Binding Value}"
+                CornerRadius="50"
+                Margin="10"/>
+        
+        <ListView Margin="10">
+            <ListView.ItemsSource>
+                <x:Array Type="{x:Type Color}">
+                    <Color>Aqua</Color>
+                    <Color>Black</Color>
+                    <Color>Blue</Color>
+                    <Color>Fuchsia</Color>
+                    <Color>Gray</Color>
+                </x:Array>
+            </ListView.ItemsSource>
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <BoxView Color="{Binding}" Margin="3" />
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+
+    </StackLayout>
+
+</ContentPage>
